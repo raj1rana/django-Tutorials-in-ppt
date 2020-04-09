@@ -5,8 +5,7 @@ pipeline {
     disableConcurrentBuilds()
   }
 
-  environment {
-  }
+ 
 
   stages {
 
