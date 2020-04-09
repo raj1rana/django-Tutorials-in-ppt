@@ -6,12 +6,6 @@ pipeline {
   }
 
   environment {
-    DB_DATABASE = '$(aws ssm get-parameters --region us-east-2 --names  /dev/fast-security-dev-service/DB_DATABASE --query Parameters[0].Value --with-decryption | tr -d \'"\')'
-    DB_HOST = '$(aws ssm get-parameters --region us-east-2 --names /dev/fast-security-dev-service/DB_HOST --query Parameters[0].Value --with-decryption | tr -d \'"\')'
-    DB_PASSWORD = '$(aws ssm get-parameters --region us-east-2 --names /dev/fast-security-dev-service/DB_PASSWORD --query Parameters[0].Value --with-decryption | tr -d \'"\')'
-    DB_USERNAME = '$(aws ssm get-parameters --region us-east-2 --names /dev/fast-security-dev-service/DB_USERNAME --query Parameters[0].Value --with-decryption | tr -d \'"\')'
-    CodeCommit_Repository = '$(aws ssm get-parameters --region us-east-2 --names /ism-fast-laravel-security/CloneURL --query Parameters[0].Value --with-decryption | tr -d \'"\')'
-    REPOSITORY_URI = '$(aws ssm get-parameters --region us-east-2 --names /ism-fast-laravel-security/Repository_URI --query Parameters[0].Value --with-decryption | tr -d \'"\')'
   }
 
   stages {
